@@ -21,6 +21,11 @@ class CardRepositoryPrisma implements CardRepository {
         });
         return result || {};
     }
+
+    async readAll(): Promise<Card | {}> {
+        const result = await prisma.card.findMany();
+        return result || {};
+    }
 }
 
 export { CardRepositoryPrisma };

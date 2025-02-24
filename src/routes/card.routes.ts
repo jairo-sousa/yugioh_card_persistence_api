@@ -30,4 +30,14 @@ export async function cardRoutes(fastify: FastifyInstance) {
             reply.send(error);
         }
     });
+
+    fastify.get("/", async (req, reply) => {
+        try {
+            const data = await cardUsecase.readAll();
+
+            return reply.send(data);
+        } catch (error) {
+            reply.send(error);
+        }
+    });
 }

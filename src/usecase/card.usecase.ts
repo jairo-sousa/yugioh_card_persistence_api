@@ -21,6 +21,12 @@ class CardUsecase {
 
         return result;
     }
+
+    async readAll(): Promise<Card | {}> {
+        const result = await this.cardRepository.readAll();
+
+        return result;
+    }
 }
 
 export { CardUsecase };

@@ -5,4 +5,5 @@ export interface Card {
 export interface CardRepository {
     create(card: Card): Promise<Card | {}>;
     read(id: string): Promise<Card | {}>;
+    readAll(): Promise<Card | {}>;
 }
