@@ -15,6 +15,12 @@ class CardUsecase {
 
         return result;
     }
+
+    async read(id: string): Promise<Card | {}> {
+        const result = await this.cardRepository.read(id);
+
+        return result;
+    }
 }
 
 export { CardUsecase };

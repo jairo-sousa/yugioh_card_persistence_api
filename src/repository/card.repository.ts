@@ -12,6 +12,15 @@ class CardRepositoryPrisma implements CardRepository {
         });
         return result;
     }
+
+    async read(id: string): Promise<Card | {}> {
+        const result = await prisma.card.findUnique({
+            where: {
+                id,
+            },
+        });
+        return result || {};
+    }
 }
 
 export { CardRepositoryPrisma };
