@@ -27,6 +27,12 @@ class CardUsecase {
 
         return result;
     }
+
+    async update(id: string, card: Card): Promise<Card | {}> {
+        const result = await this.cardRepository.update(id, card);
+
+        return result;
+    }
 }
 
 export { CardUsecase };

@@ -26,6 +26,17 @@ class CardRepositoryPrisma implements CardRepository {
         const result = await prisma.card.findMany();
         return result || {};
     }
+
+    async update(id: string, card: Card): Promise<Card | {}> {
+        const result = await prisma.card.update({
+            where: {
+                id,
+            },
+            data: card,
+        });
+
+        return result;
+    }
 }
 
 export { CardRepositoryPrisma };

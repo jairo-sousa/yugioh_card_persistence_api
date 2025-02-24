@@ -40,4 +40,19 @@ export async function cardRoutes(fastify: FastifyInstance) {
             reply.send(error);
         }
     });
+
+    fastify.put<{ Params: { id: string }; Body: Card }>(
+        "/:id",
+        async (req, reply) => {
+            const { id } = req.params;
+            const card = req.body;
+            try {
+                const data = await cardUsecase.update(id, card);
+
+                return reply.send(data);
+            } catch (error) {
+                reply.send(error);
+            }
+        }
+    );
 }
