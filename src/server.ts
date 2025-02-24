@@ -18,6 +18,10 @@ const setCors = async () => {
 
 setCors();
 
+app.register(cardRoutes, {
+    prefix: "/card",
+});
+
 app.listen(
     {
         port: PORT,
