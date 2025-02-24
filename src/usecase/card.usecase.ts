@@ -33,6 +33,12 @@ class CardUsecase {
 
         return result;
     }
+
+    async delete(id: string): Promise<Card | {}> {
+        const result = await this.cardRepository.delete(id);
+
+        return result;
+    }
 }
 
 export { CardUsecase };

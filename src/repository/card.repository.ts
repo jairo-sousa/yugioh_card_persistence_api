@@ -37,6 +37,15 @@ class CardRepositoryPrisma implements CardRepository {
 
         return result;
     }
+
+    async delete(id: string): Promise<Card | {}> {
+        const result = await prisma.card.delete({
+            where: {
+                id,
+            },
+        });
+        return result || {};
+    }
 }
 
 export { CardRepositoryPrisma };
