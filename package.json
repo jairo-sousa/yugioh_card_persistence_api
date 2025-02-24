@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/jairo-sousa/yugioh_card_persistence_api/issues"
   },
-  "homepage": "https://github.com/jairo-sousa/yugioh_card_persistence_api#readme"
+  "homepage": "https://github.com/jairo-sousa/yugioh_card_persistence_api#readme",
+  "devDependencies": {
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
 }
