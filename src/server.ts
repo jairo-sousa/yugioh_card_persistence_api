@@ -3,8 +3,7 @@ import { cardRoutes } from "./routes/card.routes";
 
 import cors from "@fastify/cors";
 
-const PORT = 3100;
-const BASE_URL = "http://localhost";
+const PORT = Number(process.env.PORT) || 4000;
 
 const app: FastifyInstance = fastify();
 
@@ -25,8 +24,9 @@ app.register(cardRoutes, {
 app.listen(
     {
         port: PORT,
+        host: "0.0.0.0",
     },
     () => {
-        console.log(`[ server ] running on ${BASE_URL}/${PORT}`);
+        console.log(`[ server ] running on http://0.0.0.0:${PORT}`);
     }
 );
